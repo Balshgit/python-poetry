@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  python:
+    image: "poetry-python:latest"
+    container_name: 'poetry-python'
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USER=${USER}
+    volumes:
+      - ./poetry/:/poetry/
+    command: >
+      bash -c "
+      cp /code/* /poetry -r
+      && sleep 2
+      && chown ${USER}:$USER -R /poetry
+      "
