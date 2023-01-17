@@ -1,4 +1,4 @@
-# Poetry main package
+# Poetry main packages
 
 Used for poetry packages management with docker
 
