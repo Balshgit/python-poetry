@@ -12,6 +12,7 @@ on:
 
 jobs:
   test-poetry:
+    name: pyproject.toml check
     runs-on: ubuntu-latest
     steps:
       #----------------------------------------------
@@ -59,7 +60,7 @@ jobs:
           poetry run pip install -U pip
 
   test-docker:
-    name: Run test suite
+    name: Docker build check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
