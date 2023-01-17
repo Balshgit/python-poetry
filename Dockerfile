@@ -51,4 +51,6 @@ RUN export PATH="/root/.local/bin:$PATH" \
   && poetry lock \
   && poetry export -f requirements.txt --without-hashes --output requirements.txt
 
+CMD [ "/bin/bash", "-c", "cp /code/* /poetry -r && chown ${USER}:$USER -R /poetry" ]
+
 

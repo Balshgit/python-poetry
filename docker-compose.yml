@@ -4,6 +4,7 @@ services:
   python:
     image: "poetry-python:latest"
     container_name: 'poetry-python'
+    user: ${USER}
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,9 +12,3 @@ services:
         - USER=${USER}
     volumes:
       - ./poetry/:/poetry/
-    command: >
-      bash -c "
-      cp /code/* /poetry -r
-      && sleep 2
-      && chown ${USER}:$USER -R /poetry
-      "
