@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "create requirements"
+name = "main packages"
 version = "1.0.2"
 description = "poetry requiremts creation"
 authors = ["Dmitry Afanasyev <Balshbox@gmail.com>"]
