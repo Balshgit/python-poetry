@@ -49,7 +49,7 @@ WORKDIR /code
 RUN export PATH="/root/.local/bin:$PATH" \
   && poetry --version \
   && poetry lock \
-  && poetry export -f requirements.txt --without-hashes --output requirements.txt
+  && poetry export -f requirements.txt --with dev --without-hashes --output requirements.txt
 
 CMD [ "/bin/bash", "-c", "cp /code/* /poetry -r && chown ${USER}:$USER -R /poetry" ]
 

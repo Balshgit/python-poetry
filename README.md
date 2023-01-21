@@ -27,3 +27,8 @@ docker-compose up --build
 ```
 
 script will generate `poetry.lock` and `requirements.txt` files in `poetry` directory
+
+## Local poetry export
+```bash
+poetry export -f requirements.txt --with dev --without-hashes --output requirements.txt
+```
