@@ -30,11 +30,8 @@ RUN apt update \
     libpq-dev \
     nano \
   && export TERM=xterm \
-  # Installing `poetry` package manager:
-#  # https://github.com/python-poetry/poetry
-#  && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
   && pip install --upgrade pip \
-  && pip install poetry
+  && pip install "poetry==$POETRY_VERSION"
 
 
 RUN groupadd ${USER} && useradd -g ${USER} ${USER}
@@ -46,7 +43,7 @@ COPY --chown=${USER}:${USER} ./pyproject.toml /code/
 
 WORKDIR /code
 
-RUN export PATH="/root/.local/bin:$PATH" \
+RUN export PATH="${PATH}:/root/.local/bin" \
   && poetry --version \
   && poetry lock \
   && poetry export -f requirements.txt --with dev --without-hashes --output requirements.txt
