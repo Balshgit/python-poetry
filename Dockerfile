@@ -39,7 +39,7 @@ RUN groupadd ${USER} && useradd -g ${USER} ${USER}
 RUN mkdir /code /poetry
 RUN chown -R ${USER}:${USER} /code /poetry
 
-COPY --chown=${USER}:${USER} ./pyproject.toml /code/
+COPY --chown=${USER}:${USER} ./poetry/pyproject.toml /code/
 
 WORKDIR /code
 
