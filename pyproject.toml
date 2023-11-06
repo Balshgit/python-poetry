@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "main packages"
 version = "1.1.0"
-description = "poetry requiremts creation"
+description = "poetry requirements creation"
 authors = ["Dmitry Afanasyev <Balshbox@gmail.com>"]
 
 [build-system]
@@ -46,7 +46,6 @@ selenium = "^4.14"
 simple-term-menu = "^1.6"
 six = "^1.16"
 SQLAlchemy = "^2.0"
-SQLAlchemy-Utils = "^0.41"
 termcolor = "^2.3"
 uvicorn = "^0.24"
 validators = "^0.22"
@@ -105,7 +104,7 @@ pytest-socket = "^0.6"
 assertpy = "^1.1"
 respx = "^0.20"
 
-safety = "^2.3"
+safety = "^2.3.5"
 pip-audit = "^2.6"
 
 ruff = "^0.1"

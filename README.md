@@ -2,10 +2,15 @@
 
 Used for poetry packages management with docker
 
-required `docker` and optionally `docker-compose`
+required `docker` and optionally `docker compose`
 
 ---
 
+## Install poetry
+
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
 
 **Generate poetry.lock and requirements.txt in container for any version of python3 and poetry**
 
@@ -23,7 +28,7 @@ docker build --build-arg USER=$USER -t poetry-python . && docker run --rm -u $US
 
 ### Or run from docker-compose:
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 script will generate `poetry.lock` and `requirements.txt` files in `poetry` directory
