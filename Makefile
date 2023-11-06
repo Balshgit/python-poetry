@@ -5,7 +5,7 @@ YELLOW := $(shell tput -Txterm setaf 3)
 RESET  := $(shell tput -Txterm sgr0)
 
 .DEFAULT_GOAL := help
-.PHONY: help lint-deps
+.PHONY: help lint-deps install lock requirements-dev requirements-prod
 
 ## Проверить зависимостей
 lint-deps:
@@ -20,7 +20,15 @@ lock:
 
 ## Установить все зависимости
 install:
-	poetry install --no-interaction --no-ansi --no-root
+	poetry install --sync --no-interaction --no-ansi --no-root
+
+## Сгенерировать requirements.txt файл с dev зависимостями
+requirements-dev:
+	poetry export -f requirements.txt --with dev --without-hashes --output requirements.txt
+
+## Сгенерировать requirements.txt с only main зависимостями
+requirements-prod:
+	poetry export -f requirements.txt --without-hashes --output requirements.txt
 
 ## Show help
 help:
