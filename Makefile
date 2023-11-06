@@ -14,6 +14,14 @@ lint-deps:
 	poetry run safety check --full-report
 	poetry run pip-audit
 
+## Сгенерировать poetry.lock файл
+lock:
+	poetry lock
+
+## Установить все зависимости
+install:
+	poetry install --no-interaction --no-ansi --no-root
+
 ## Show help
 help:
 	@echo ''
