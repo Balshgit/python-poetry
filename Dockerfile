@@ -48,6 +48,11 @@ RUN export PATH="${PATH}:/root/.local/bin" \
   && poetry lock \
   && poetry export -f requirements.txt --with dev --without-hashes --output requirements.txt
 
+RUN if [ -f poetry.lock ] && [ -f requirements.txt ]; then \
+    echo "poetry.lock and requirements.txt created successfully" && exit 0; \
+    else echo "there is no poetry.lock or requirements.txt" && exit 1;  \
+    fi
+
 CMD [ "/bin/bash", "-c", "cp /code/* /poetry -r && chown ${USER}:$USER -R /poetry" ]
 
 

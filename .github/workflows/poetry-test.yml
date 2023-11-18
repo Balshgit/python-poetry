@@ -80,11 +80,6 @@ jobs:
           POETRY_LOCK: "./poetry/poetry.lock"
           REQUIREMENTS: "./poetry/requirements.txt"
         run: |
-          chown -R ${USER}:${USER} ./poetry
           cp pyproject.toml ./poetry
           docker compose up --build
-          if [ -f "$POETRY_LOCK" ] && [ -f "$REQUIREMENTS" ]; \
-          then echo "poetry.lock and requirements.txt created successfully" && exit 0; \
-          else echo "there is no poetry.lock or requirements.txt" && exit 1; \
-          fi
         shell: bash
