@@ -30,7 +30,7 @@ jobs:
       #----------------------------------------------
       - name: Install poetry
         env:  # Keep in sync with `POETRY_VERSION` in `Dockerfile`
-          POETRY_VERSION: "1.7.0"
+          POETRY_VERSION: "1.7.1"
         run: |
           curl -sSL "https://install.python-poetry.org" | python -
           # Adding `poetry` to `$PATH`:
@@ -76,6 +76,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Check docker-compose
+        env: # Keep in sync with `POETRY_VERSION` in `Dockerfile`
+          POETRY_LOCK: "./poetry/poetry.lock"
+          REQUIREMENTS: "./poetry/requirements.txt"
         run: |
           docker compose up --build
-          bash build-check.sh
+          bash if [ -f "$POETRYLOCK" ] && [ -f "$REQUIREMENTS" ]; then echo "poetry.lock and requirements.txt created successfully exit 0 fi
