@@ -81,4 +81,4 @@ jobs:
           REQUIREMENTS: "./poetry/requirements.txt"
         run: |
           docker compose up --build
-          bash if [ -f "$POETRYLOCK" ] && [ -f "$REQUIREMENTS" ]; then echo "poetry.lock and requirements.txt created successfully" exit 0 fi
+          bash "if [ -f "$POETRY_LOCK" ] && [ -f "$REQUIREMENTS" ]; then echo "poetry.lock and requirements.txt created successfully" exit 0 fi"
