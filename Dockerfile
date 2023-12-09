@@ -1,4 +1,4 @@
-FROM python:3.11.6
+FROM python:3.12.1
 
 ARG POETRY_VERSION=1.7.1
 ARG USER
@@ -31,7 +31,8 @@ RUN apt update \
     nano \
   && export TERM=xterm \
   && pip install --upgrade pip \
-  && pip install "poetry==$POETRY_VERSION"
+  && pip install "poetry==$POETRY_VERSION" \
+  && poetry self add poetry-plugin-export
 
 
 RUN groupadd ${USER} && useradd -g ${USER} ${USER}
