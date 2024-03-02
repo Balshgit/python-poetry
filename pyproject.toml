@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "main packages"
-version = "1.3.6"
+version = "1.3.7"
 description = "poetry requirements creation"
 authors = ["Dmitry Afanasyev <Balshbox@gmail.com>"]
 
 [build-system]
-requires = ["poetry-core>=1.8.0"]
+requires = ["poetry-core>=1.8.1"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.dependencies]
@@ -15,14 +15,14 @@ alembic = "^1.13"
 bcrypt = "^4.1"
 celery = "^5.3"
 click = "^8.1"
-cookiecutter = "^2.5"
+cookiecutter = "^2.6"
 decorator = "^5.1"
 Django = "^4.2"
 factory-boy = "^3.3"
 Faker = "^19.0"
-fastapi = "^0.109"
+fastapi = "^0.110"
 gunicorn = "^21.2"
-httpx = "^0.26"
+httpx = "^0.27"
 Jinja2 = "^3.1"
 loguru = "^0.7"
 MouseInfo = "0.1"
@@ -35,30 +35,30 @@ psycopg2-binary = "^2.9.7"
 PyAutoGUI = "^0.9"
 pydantic = "^2.6"
 Pygments = "^2.16"
-pyinstaller = "^6.3"
+pyinstaller = "^6.4"
 PyQt6 = "^6.5"
 python-decouple = "^3.8"
 pytz = "^2024.1"
 redis = {version = "^5.0", extras = ["asyncio"]}
 requests = "^2.31"
-selenium = "^4.17"
+selenium = "^4.18"
 simple-term-menu = "^1.6"
 six = "^1.16"
 SQLAlchemy = "^2.0"
 termcolor = "^2.4"
-uvicorn = "^0.27.0.post1"
+uvicorn = "^0.27"
 validators = "^0.22"
 virtualenv = "^20.25"
 wget = "^3.2"
 zipp = "^3.16"
 
 [tool.poetry.dev-dependencies]
-ipython = "^8.21"
+ipython = "^8.22"
 
-black = "^24.1"
+black = "^24.2"
 mypy = "^1.8"
 
-autoflake = "^2.2"
+autoflake = "^2.3"
 flake8 = "^7.0"
 flake8-logging-format = "^0.9"
 flake8-comprehensions = "^3.14"
@@ -102,7 +102,7 @@ pytest-socket = "^0.7"
 assertpy = "^1.1"
 respx = "^0.20"
 
-safety = "^2.4.0b2"
+safety = "^2"
 pip-audit = "^2.7"
 
-ruff = "^0.2"
+ruff = "^0.3"
