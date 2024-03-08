@@ -1,6 +1,6 @@
 FROM python:3.12.2
 
-ARG POETRY_VERSION=1.8.1
+ARG POETRY_VERSION=1.8.2
 ARG USER
 
 # python:
@@ -17,7 +17,7 @@ ENV PYTHONFAULTHANDLER=1 \
   POETRY_NO_INTERACTION=1 \
   POETRY_VIRTUALENVS_CREATE=false \
   POETRY_CACHE_DIR='/var/cache/pypoetry' \
-  PATH="$PATH:/root/.poetry/bin"
+  PATH='"$PATH":/root/.poetry/bin'
 
 RUN apt update \
   && apt-get update \
@@ -31,8 +31,11 @@ RUN apt update \
     nano \
   && export TERM=xterm \
   && pip install --upgrade pip \
-  && pip install "poetry==$POETRY_VERSION" \
-  && poetry self add poetry-plugin-export
+  && pip install 'poetry=="$POETRY_VERSION"' \
+  && poetry self add poetry-plugin-export \
+  # Cleaning cache:
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && apt-get clean -y
 
 
 RUN groupadd ${USER} && useradd -g ${USER} ${USER}
