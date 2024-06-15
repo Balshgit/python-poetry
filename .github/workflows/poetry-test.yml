@@ -24,13 +24,13 @@ jobs:
         id: setup-python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12.2'
+          python-version: '3.12.4'
       #----------------------------------------------
       #  -----  install & configure poetry  -----
       #----------------------------------------------
       - name: Install poetry
         env:  # Keep in sync with `POETRY_VERSION` in `Dockerfile`
-          POETRY_VERSION: "1.8.2"
+          POETRY_VERSION: "1.8.3"
         run: |
           curl -sSL "https://install.python-poetry.org" | python -
           # Adding `poetry` to `$PATH`:
