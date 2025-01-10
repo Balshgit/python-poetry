@@ -1,6 +1,6 @@
-FROM python:3.12.4
+FROM python:3.13.1
 
-ARG POETRY_VERSION=1.8.3
+ARG POETRY_VERSION=2.0.0
 ARG USER
 
 # python:
