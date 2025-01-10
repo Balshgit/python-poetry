@@ -5,7 +5,7 @@ description = "poetry requiremts creation"
 authors = ["Dmitry Afanasyev <Balshbox@gmail.com>"]
 
 [tool.poetry.dependencies]
-Python="^3.12"
+Python="^3.13"
 aiohttp = "^3.9"
 loguru = "^0.7"
 requests = "^2.31"
@@ -23,5 +23,5 @@ coverage = "^7.3"
 safety = "^2"
 
 [build-system]
-requires = ["poetry-core>=1.8.3"]
+requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
