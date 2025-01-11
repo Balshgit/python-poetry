@@ -13,7 +13,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 package-mode = false
 
-[dependencies]
+[tool.poetry.dependencies]
 aiohttp = "^3.11"
 alembic = "^1.13"
 bcrypt = "^4.1"
