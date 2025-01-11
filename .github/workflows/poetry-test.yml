@@ -59,12 +59,18 @@ jobs:
           poetry install --no-interaction --no-ansi --no-root
           poetry run pip install -U pip
       #----------------------------------------------
+      #              check poetry file
+      #----------------------------------------------
+      - name: Poetry consistency check
+        continue-on-error: true
+        run: |
+          poetry check
+      #----------------------------------------------
       #              check dependencies
       #----------------------------------------------
       - name: Extended checks
         continue-on-error: true
         run: |
-          poetry run poetry check
           poetry run pip check
           poetry run safety check --full-report
           poetry run pip-audit
